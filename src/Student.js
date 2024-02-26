@@ -14,14 +14,14 @@ function Student( {handleClick, studentsData} ) {
 
 
     return <div>
-        <input />
+        <h1>Students Records</h1>
         <table>
             <thead>
                 <tr>
-                    <th>id</th>
-                    <th>firstName</th>
-                    <th>lastName</th>
-                    <th>email</th>
+                    <th>Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
                 </tr>
             </thead>
             <tbody>

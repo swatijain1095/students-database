@@ -1,13 +1,16 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import Student from './Student';
+import './style.css'
 
 export default function App(props) {
   const [studentsData, setStudentsData] = useState([]);
+  const [selectedStudent, setSelectedStudent] = useState({});
 
   const handleClick = (student) => {
-    console.log(student);
+    setSelectedStudent(student);
   };
+
   useEffect(() => {
     // Call API & load data into students data state
     async function fetchData() {
@@ -21,6 +24,15 @@ export default function App(props) {
 
   return (
     <div className='App'>
+        <h1>Students Database</h1>
+        <section>
+            <h2>Selected Student :</h2>
+            <p>Id: {selectedStudent.id}</p>
+            <p>First Name: {selectedStudent.firstName}</p>
+            <p>Last Name: {selectedStudent.lastName}</p>
+            <p>Email: {selectedStudent.email}</p>
+        </section>
+
       <Student studentsData={studentsData} handleClick={handleClick} />
     </div>
   );
