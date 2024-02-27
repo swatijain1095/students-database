@@ -1,6 +1,6 @@
-function Student( {handleClick, studentsData} ) {
+function Student( {handleClick, studentsData, isLoading} ) {
 
-    
+
     const renderStudentsData = () => {
         return studentsData.map(({id, firstName, lastName, email}) => {
             return <tr onClick={() => {handleClick({id, firstName, lastName, email})}} key={id}>
@@ -16,7 +16,7 @@ function Student( {handleClick, studentsData} ) {
     return <div>
         <h1>Students Records</h1>
         <table>
-            <thead>
+            <thead className={isLoading ? "loading" : undefined}>
                 <tr>
                     <th>Id</th>
                     <th>First Name</th>

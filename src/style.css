@@ -14,3 +14,16 @@ tr:hover {
   box-shadow: 0 0 4px gray;
   font-size: large;
 }
+
+.loading {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
